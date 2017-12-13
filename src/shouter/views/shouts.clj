@@ -7,7 +7,7 @@
 (defn shout-form []
   [:div {:id "shout-form" :class "sixteen column alpha omega"}
     (form/form-to [:post "/"]
-                  (anti-forgery/anit-forger-field)
+                  (anti-forgery/anti-forgery-field)
                   (form/label "shout" "What do you want to SHOUT?")
                   (form/text-area "shout")
                   (form/submit-button "SHOUT!"))])

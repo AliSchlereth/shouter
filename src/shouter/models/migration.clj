@@ -4,13 +4,13 @@
 
 (defn migrated? []
   (-> (sql/query shout/spec
-                  [(str "select count(*) from information_schema.tables"
-                        "where table_name='shouts'")])
+                  [(str "select count(*) from information_schema.tables "
+                        "where table_name = 'shouts'")])
       first :count pos?))
 
 (defn migrate []
   (when (not (migrated?))
-    (print "Creating database structure...")(flush)
+    (print "Creating database structure...") (flush)
     (sql/db-do-commands shout/spec
                         (sql/create-table-ddl
                           :shouts

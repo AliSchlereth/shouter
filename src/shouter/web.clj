@@ -16,7 +16,7 @@
 (def application (wrap-defaults routes site-defaults))
 
 (defn start [port]
-  (ring/run-getty application {:port port
+  (ring/run-jetty application {:port port
                                :join? false}))
 (defn -main []
   (schema/migrate)
