@@ -15,7 +15,5 @@
                         (sql/create-table-ddl
                           :shouts
                           [[:id :serial "PRIMARY KEY"]
-                          [:body :varchar "NOT NULL"]
-                          [:created_at :timestamp
-                            "NOT NULL" "DEFUALT CURRENT_TIMESTAMP"]]))
+                          [:body :varchar "NOT NULL"]]))
     (println " done")))
