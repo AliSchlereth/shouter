@@ -5,7 +5,7 @@
             [ring.util.anti-forgery :as anti-forgery]))
 
 (defn shout-form []
-  [:div {:id "shout-form" :class "sixteen column alpha omega"}
+  [:div {:id "shout-form" :class "sixteen columns alpha omega"}
     (form/form-to [:post "/"]
                   (anti-forgery/anti-forgery-field)
                   (form/label "shout" "What do you want to SHOUT?")
@@ -13,7 +13,7 @@
                   (form/submit-button "SHOUT!"))])
 
 (defn display-shouts [shouts]
-  [:div {:class "shouts sixteen column alpha omega"}
+  [:div {:class "shouts sixteen columns alpha omega"}
     (map
       (fn [shout] [:h2 {:class "shout"} (h (:body shout))])
       shouts)])

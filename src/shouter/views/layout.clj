@@ -1,7 +1,7 @@
 (ns shouter.views.layout
   (:require [hiccup.page :as h]))
 
-(defn common[title & body]
+(defn common [title & body]
   (h/html5
     [:head
       [:meta {:charset "utf-8"}]
@@ -11,7 +11,7 @@
       [:title title]
       (h/include-css "/stylesheets/base.css"
                      "/stylesheets/skeleton.css"
-                     "/stylesheets/scree.css")
+                     "/stylesheets/screen.css")
       (h/include-css "http://fonts.googleapis.com/css?family=Sigmar+One&v1")]
     [:body
       [:div {:id "header"}
